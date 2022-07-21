@@ -1,0 +1,2 @@
+resource: https://www.youtube.com/watch?v=WuGKMQpVQRA
+minutes: 11:38
