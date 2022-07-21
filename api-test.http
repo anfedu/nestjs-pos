@@ -1,0 +1,11 @@
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+	"fullname": "admin anfstudio",
+	"email": "admin",
+	"password": "123456789",
+	"username": "superadmin"
+}
+
+
