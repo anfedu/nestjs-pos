@@ -1,11 +1,11 @@
-POST http://localhost:3000/user/
+PATCH http://localhost:3000/user/1
 Content-Type: application/json
 
 {
-	"fullname": "admin anfstudio",
-	"email": "admin",
+	"fullname": "admin pertama",
+	"email": "admin.pertama@anfstudio.com",
 	"password": "123456789",
-	"username": "superadmin"
+	"username": "admin pertama"
 }
 
 
