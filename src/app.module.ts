@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { User } from './user/entities/user.entity';
 import { UserModule } from './user/user.module';
+import { ExistsValidator } from './etc/validator/exists-validator';
 
 const dotenv = process.env;
 @Module({
@@ -23,6 +24,6 @@ const dotenv = process.env;
     UserModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ExistsValidator],
 })
 export class AppModule {}

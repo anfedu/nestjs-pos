@@ -1,4 +1,4 @@
-PATCH http://localhost:3000/user/1
+POST http://localhost:3000/user/
 Content-Type: application/json
 
 {

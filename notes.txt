@@ -1,2 +1,5 @@
-resource: https://www.youtube.com/watch?v=WuGKMQpVQRA
+nestjs: https://www.youtube.com/watch?v=WuGKMQpVQRA
 minutes: 32:01
+
+deploy: https://www.youtube.com/watch?v=rDkmfM2lTVw
+minutes: 7:30
