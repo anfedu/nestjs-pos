@@ -1,5 +1,5 @@
 nestjs: https://www.youtube.com/watch?v=WuGKMQpVQRA
-minutes: 32:01
+minutes: 48:30
 
 deploy: https://www.youtube.com/watch?v=rDkmfM2lTVw
 minutes: 7:30

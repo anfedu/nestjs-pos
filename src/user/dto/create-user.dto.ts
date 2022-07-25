@@ -5,6 +5,8 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { IsExist } from 'src/etc/validator/exists-validator';
+import { User } from '../entities/user.entity';
 
 export class CreateUserDto {
   @IsOptional()
@@ -15,6 +17,7 @@ export class CreateUserDto {
   fullname: string;
 
   @IsEmail()
+  @IsExist([User, 'email'])
   email: string;
 
   @IsString()
