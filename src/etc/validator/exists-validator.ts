@@ -3,18 +3,19 @@ import {
   registerDecorator,
   ValidationArguments,
   ValidationOptions,
+  ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
+import { User } from 'src/user/entities/user.entity';
 import { getConnection } from 'typeorm';
 
+@ValidatorConstraint({ async: true })
 @Injectable()
 export class ExistsValidator implements ValidatorConstraintInterface {
   async validate(value: any, args: ValidationArguments) {
-    const find = { [args.constraints[1]]: args.value };
-    const check = await getConnection()
-      .getRepository(args.constraints[0])
-      .findOne(find);
-
+    const constrains = args.constraints;
+    const find = { [constrains[1]]: args.value };
+    const check = await getConnection().getRepository(User).findOne(find);
     if (check) return false;
     return true;
   }
