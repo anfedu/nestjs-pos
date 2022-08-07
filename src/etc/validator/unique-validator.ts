@@ -11,28 +11,28 @@ import { getConnection } from 'typeorm';
 
 @ValidatorConstraint({ async: true })
 @Injectable()
-export class ExistsValidator implements ValidatorConstraintInterface {
+export class UniqueValidator implements ValidatorConstraintInterface {
   async validate(value: any, args: ValidationArguments) {
     const constrains = args.constraints;
     const find = { [constrains[1]]: args.value };
     const check = await getConnection().getRepository(User).findOne(find);
-    if (check) return true;
-    return false;
+    if (check) return false;
+    return true;
   }
   defaultMessage(args?: ValidationArguments): string {
-    return args.property + ' ' + args.value + ' not found';
+    return args.property + ' ' + args.value + ' sudah digunakan';
   }
 }
 
-export function IsExist(options: any, validationOptions?: ValidationOptions) {
+export function IsUnique(options: any, validationOptions?: ValidationOptions) {
   return function (object: any, propertyName: string) {
     registerDecorator({
-      name: 'isExist',
+      name: 'isUnique',
       target: object.constructor,
       propertyName: propertyName,
       constraints: options,
       options: validationOptions,
-      validator: ExistsValidator,
+      validator: UniqueValidator,
       async: true,
     });
   };
